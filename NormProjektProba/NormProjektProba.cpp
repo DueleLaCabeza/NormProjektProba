@@ -6,12 +6,22 @@ using namespace std;
 
 int main()
 {
-    char map[20][20];
-    for (int i = 0; i < 20; i++)
+    const int mapy = 20;
+    const int mapx = 20;
+    char map[mapx][mapy];
+    for (int i = 0; i < mapx; i++)
     {
-        for (int j = 0; j < 20; j++)
+        for (int j = 0; j < mapy; j++)
         {
-            map[i][j] = ' ';
+            if (i == 0 or j == 0 or i==19 or j==19)
+            {
+                map[i][j] = '@';
+            }
+            else
+            {
+                map[i][j] = ' ';
+            }
+            
         }
     }
     int PositionSnake[2] = { 5,5 };
@@ -20,11 +30,13 @@ int main()
     {
         system("cls");
         map[PositionSnake[0]][PositionSnake[1]] = '@';
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < mapx; i++)
         {
-            for (int j = 0; j < 20; j++)
+            for (int j = 0; j < mapy; j++)
             {
-                cout << map[i][j];
+
+                cout<< map[i][j];
+               
             }
             cout << endl;
         }
@@ -32,7 +44,7 @@ int main()
         map[PositionSnake[0]][PositionSnake[1]] = ' ';
         if (key == 'd')
         {
-            PositionSnake[1] += 1;
+            PositionSnake[1]+=1;
         }
         if (key == 'a')
         {
@@ -46,6 +58,7 @@ int main()
         {
             PositionSnake[0] += 1;
         }
+
     }
     cout << "You entered: " << key << endl;
 }//   3. Use the Output window to see build output and other messages
