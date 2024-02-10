@@ -42,9 +42,9 @@ int main()
         }
         key = _getch();
         map[PositionSnake[0]][PositionSnake[1]] = ' ';
-        if (key == 'd')
+        if (key == 'd' and PositionSnake[1] != mapy - 1)
         {
-            PositionSnake[1]+=1;
+            PositionSnake[1] += 1;
         }
         if (key == 'a')
         {
