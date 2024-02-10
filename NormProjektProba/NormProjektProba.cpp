@@ -6,14 +6,14 @@ using namespace std;
 
 int main()
 {
-    const int mapy = 20;
+    const int mapy = 50;
     const int mapx = 20;
     char map[mapx][mapy];
     for (int i = 0; i < mapx; i++)
     {
         for (int j = 0; j < mapy; j++)
         {
-            if (i == 0 or j == 0 or i==19 or j==19)
+            if (i == 0 or j == 0 or i== mapx-1 or j== mapy-1)
             {
                 map[i][j] = '@';
             }
@@ -66,13 +66,10 @@ int main()
                 PositionSnake[0] += 1;
             }
         }
-        if (key == 's')
+        if (key == 's' and map[PositionSnake[0]+1][PositionSnake[1]] != '@')
         {
             PositionSnake[0] += 1;
-            if (map[PositionSnake[0]][PositionSnake[1]] == '@')
-            {
-                PositionSnake[0] -= 1;
-            }
+            
         }
 
     }
