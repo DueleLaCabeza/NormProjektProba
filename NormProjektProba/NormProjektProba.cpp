@@ -6,8 +6,16 @@ using namespace std;
 
 int main()
 {
+    int SpawnpointSnake[2] = {5,5};
+    int PositionSnake[2];
     char key = ' ';
-    cout << "Enter a key" << endl;
-    key = _getch();
+    while (true)
+    {
+        key = _getch();
+        if (key == 'w')
+        {
+            
+        }
+    }
     cout << "You entered: " << key << endl;
 }
