@@ -1,16 +1,32 @@
-// NormProjektProba.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include <iostream>
+#include <chrono>
 #include <thread>
 #include <conio.h>
 using namespace std;
 
 int main()
 {
+    char map[20][20];
+    for (int i = 0; i < 20; i++)
+    {
+        for (int j = 0; j < 20; j++)
+        {
+            map[i][j] = ' ';
+        }
+    }
+
     int SpawnpointSnake[2] = {5,5};
     int PositionSnake[2];
     char key = ' ';
     while (true)
     {
+        for (int i = 0; i < 20; i++)
+        {
+            for (int j = 0; j < 20; j++)
+            {
+                cout<< map[i][j];
+            }
+        }
         key = _getch();
         if (key == 'w')
         {
