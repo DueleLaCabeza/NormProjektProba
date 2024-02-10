@@ -45,18 +45,34 @@ int main()
         if (key == 'd')
         {
             PositionSnake[1]+=1;
+            if (map[PositionSnake[0]][PositionSnake[1]] == '@')
+            {
+                PositionSnake[1] -= 1;
+            }
         }
         if (key == 'a')
         {
             PositionSnake[1] -= 1;
+            if (map[PositionSnake[0]][PositionSnake[1]] == '@')
+            {
+                PositionSnake[1] += 1;
+            }
         }
         if (key == 'w')
         {
             PositionSnake[0] -= 1;
+            if (map[PositionSnake[0]][PositionSnake[1]] == '@')
+            {
+                PositionSnake[0] += 1;
+            }
         }
         if (key == 's')
         {
             PositionSnake[0] += 1;
+            if (map[PositionSnake[0]][PositionSnake[1]] == '@')
+            {
+                PositionSnake[0] -= 1;
+            }
         }
 
     }
