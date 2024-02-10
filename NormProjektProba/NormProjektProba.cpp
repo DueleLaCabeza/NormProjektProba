@@ -44,19 +44,35 @@ int main()
         map[PositionSnake[0]][PositionSnake[1]] = ' ';
         if (key == 'd' and PositionSnake[1] != mapy - 1)
         {
-            PositionSnake[1] += 1;
+            PositionSnake[1]+=1;
+            if (map[PositionSnake[0]][PositionSnake[1]] == '@')
+            {
+                PositionSnake[1] -= 1;
+            }
         }
         if (key == 'a')
         {
             PositionSnake[1] -= 1;
+            if (map[PositionSnake[0]][PositionSnake[1]] == '@')
+            {
+                PositionSnake[1] += 1;
+            }
         }
         if (key == 'w')
         {
             PositionSnake[0] -= 1;
+            if (map[PositionSnake[0]][PositionSnake[1]] == '@')
+            {
+                PositionSnake[0] += 1;
+            }
         }
         if (key == 's')
         {
             PositionSnake[0] += 1;
+            if (map[PositionSnake[0]][PositionSnake[1]] == '@')
+            {
+                PositionSnake[0] -= 1;
+            }
         }
 
     }
