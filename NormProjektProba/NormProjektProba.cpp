@@ -14,12 +14,11 @@ int main()
             map[i][j] = ' ';
         }
     }
-
-    int SpawnpointSnake[2] = {5,5};
-    int PositionSnake[2];
+    int PositionSnake[2] = { 5,5 };
     char key = ' ';
     while (true)
     {
+        system("cls");
         for (int i = 0; i < 20; i++)
         {
             for (int j = 0; j < 20; j++)
@@ -28,10 +27,24 @@ int main()
             }
         }
         key = _getch();
+        map[i][j] = ' ';
+        if (key == 'd')
+        {
+            PositionSnake[0]+=1;
+        }
+        if (key == 'a')
+        {
+            PositionSnake[0] -= 1;
+        }
         if (key == 'w')
         {
-            
+            PositionSnake[1] -= 1;
         }
+        if (key == 's')
+        {
+            PositionSnake[0] += 1;
+        }
+        map[PositionSnake[0]][PositionSnake[1]] = '@';
     }
     cout << "You entered: " << key << endl;
 }//   3. Use the Output window to see build output and other messages
