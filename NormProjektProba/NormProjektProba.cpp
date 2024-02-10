@@ -14,23 +14,37 @@ int main()
             map[i][j] = ' ';
         }
     }
-
-    int SpawnpointSnake[2] = {5,5};
-    int PositionSnake[2];
+    int PositionSnake[2] = { 5,5 };
     char key = ' ';
     while (true)
     {
+        system("cls");
+        map[PositionSnake[0]][PositionSnake[1]] = '@';
         for (int i = 0; i < 20; i++)
         {
             for (int j = 0; j < 20; j++)
             {
-                cout<< map[i][j];
+                cout << map[i][j];
             }
+            cout << endl;
         }
         key = _getch();
+        map[PositionSnake[0]][PositionSnake[1]] = ' ';
+        if (key == 'd')
+        {
+            PositionSnake[1] += 1;
+        }
+        if (key == 'a')
+        {
+            PositionSnake[1] -= 1;
+        }
         if (key == 'w')
         {
-            
+            PositionSnake[0] -= 1;
+        }
+        if (key == 's')
+        {
+            PositionSnake[0] += 1;
         }
     }
     cout << "You entered: " << key << endl;
