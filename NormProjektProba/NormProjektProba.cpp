@@ -13,7 +13,15 @@ int main()
     {
         for (int j = 0; j < mapy; j++)
         {
-            map[i][j] = ' ';
+            if (i == 0 or j == 0 or i==19 or j==19)
+            {
+                map[i][j] = '@';
+            }
+            else
+            {
+                map[i][j] = ' ';
+            }
+            
         }
     }
     int PositionSnake[2] = { 5,5 };
@@ -28,6 +36,7 @@ int main()
             {
 
                 cout<< map[i][j];
+               
             }
             cout << endl;
         }
@@ -49,6 +58,7 @@ int main()
         {
             PositionSnake[0] += 1;
         }
+
     }
     cout << "You entered: " << key << endl;
 }//   3. Use the Output window to see build output and other messages
