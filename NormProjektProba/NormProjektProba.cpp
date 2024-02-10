@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include <string>
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int WindowSizeX = 240;
+    int WindowSizeY = 135;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
